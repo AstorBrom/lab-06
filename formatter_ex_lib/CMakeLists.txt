@@ -7,7 +7,5 @@ add_library(lib2 STATIC formatter_ex.cpp)
 
 target_include_directories(lib2 PUBLIC 
                             ${CMAKE_CURRENT_SOURCE_DIR}/../formatter_lib)
-                            
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../formatter_lib lol)
 
 target_link_libraries(lib2 lib1)
