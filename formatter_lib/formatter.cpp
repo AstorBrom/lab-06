@@ -3,7 +3,7 @@
 //aboba2
 //aboba3
 //aboba4
-//abob
+//abob//g
 int count (int a, int b)
 {
     return a + b;
