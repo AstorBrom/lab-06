@@ -14,4 +14,4 @@ target_include_directories(${PROJECT_NAME} PUBLIC
                             
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../formatter_lib lol)
 
-target_link_libraries(${PROJECT_NAME} formatter)
+target_link_libraries(lib2 formatter)
