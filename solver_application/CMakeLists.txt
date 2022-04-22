@@ -13,11 +13,11 @@ target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/..
                                                    ${CMAKE_CURRENT_SOURCE_DIR}/../formatter_lib
                                                    ${CMAKE_CURRENT_SOURCE_DIR}/../solver_application)
 						   
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../formatter_lib formatter)						   
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../formatter_ex_lib formatter_ex)                                                
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../solver_lib solver)
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../solver_application solve_app)
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../hello_world_application hello)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../formatter_lib formatterr)						   
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../formatter_ex_lib formatter_exx)                                                
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../solver_lib solverr)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../solver_application solve_appp)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../hello_world_application helloo)
 
 target_link_libraries(gg formatter_ex solver formatter hello solve_app)
 if(make_bin)
