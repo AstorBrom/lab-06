@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.4)
 
 project(solve_app)
 
-add_executable(${PROJECT_NAME} equation.cpp)
+add_executable(gg equation.cpp)
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
                         CMAKE_CXX_STANDARD 17
@@ -12,14 +12,14 @@ target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/..
                                                    ${CMAKE_CURRENT_SOURCE_DIR}/../formatter_ex_lib   
                                                    ${CMAKE_CURRENT_SOURCE_DIR}/../formatter_lib
                                                    ${CMAKE_CURRENT_SOURCE_DIR}/../solver_application)
-                                                
+						   
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../formatter_lib formatter)						   
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../formatter_ex_lib formatter_ex)                                                
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../solver_lib solver)
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../solver_application solve_app)
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../formatter_lib formatter)
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../formatter_ex_lib formatter_ex)
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../hello_world_application hello)
 
-target_link_libraries(${PROJECT_NAME} formatter_ex solver)
+target_link_libraries(gg formatter_ex solver formatter hello solve_app)
 if(make_bin)
 	install(TARGETS solve_app RUNTIME DESTINATION bin)
 	set(CPACK_GENERATOR "DEB")
