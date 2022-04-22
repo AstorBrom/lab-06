@@ -8,20 +8,18 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
                         CMAKE_CXX_STANDARD 17
                         CMAKE_CXX_STANDARD_REQUIRED ON
                         CMAKE_BUILD_TYPE Release)
-target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../solver_lib
+target_include_directories(gg PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../solver_lib
                                                    ${CMAKE_CURRENT_SOURCE_DIR}/../formatter_ex_lib   
                                                    ${CMAKE_CURRENT_SOURCE_DIR}/../formatter_lib
                                                    ${CMAKE_CURRENT_SOURCE_DIR}/../solver_application)
 						   
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../formatter_lib formatterr)						   
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../formatter_ex_lib formatter_exx)                                                
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../solver_lib solverr)
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../solver_application solve_appp)
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../hello_world_application helloo)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../formatter_lib lol)						   
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../formatter_ex_lib formatter_ex)                                                
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../solver_lib solver)
 
-target_link_libraries(gg formatter_ex solver formatter hello solve_app)
+target_link_libraries(gg lib1 lib2 lib3)
 if(make_bin)
-	install(TARGETS solve_app RUNTIME DESTINATION bin)
+	install(TARGETS gg RUNTIME DESTINATION bin)
 	set(CPACK_GENERATOR "DEB")
 	set(CPACK_DEBIAN_PACKAGE_MAINTAINER "David Doria")
 	set(CPACK_DEBIAN_FILE_NAME "solvering.deb")
@@ -33,9 +31,9 @@ if(make_bin)
 	set(CPACK_PACKAGE_FILE_NAME "wixxx")
 else()
 	install(FILES equation.cpp DESTINATION src)
-	install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/../formatter_ex_lib/libformatter_ex.a DESTINATION src)
-	install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/../formatter_lib/libformatter.a DESTINATION src)
-	install(TARGETS solverlib DESTINATION src)
+	install(TARGETS lib1 DESTINATION src)
+	install(TARGETS lib2 DESTINATION src)
+	install(TARGETS lib3 DESTINATION src)
 	set(CPACK_GENERATOR "TGZ")
 	set(CPACK_PACKAGE_FILE_NAME "just_code")
 endif()

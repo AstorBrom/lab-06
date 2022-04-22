@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.4)
 
 project(formatter_ex)
 
-add_library(${PROJECT_NAME} STATIC formatter_ex.cpp)
+add_library(lib2 STATIC formatter_ex.cpp)
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
                         CMAKE_CXX_STANDARD 17
@@ -12,6 +12,6 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 target_include_directories(${PROJECT_NAME} PUBLIC 
                             ${CMAKE_CURRENT_SOURCE_DIR}/../formatter_lib)
                             
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../formatter_lib formatter)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../formatter_lib lol)
 
 target_link_libraries(${PROJECT_NAME} formatter)
