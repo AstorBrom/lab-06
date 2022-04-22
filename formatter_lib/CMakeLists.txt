@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.0)
 
-project(formatter)
+project(lol)
 
-add_library(${PROJECT_NAME} STATIC formatter.cpp)
+add_library(lol STATIC formatter.cpp)
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
                         CMAKE_CXX_STANDARD 17
